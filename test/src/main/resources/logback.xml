@@ -1,0 +1,52 @@
+<configuration>
+    <appender name="STDOUT_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/std_out.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+    <appender name="STDERR_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/std_err.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+    <appender name="STDDEBUG_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/std_debug.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+    <appender name="STDWARN_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/std_warn.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>WARN</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+    <root>
+        <appender-ref ref="STDOUT_FILE"/>
+        <appender-ref ref="STDERR_FILE"/>
+        <appender-ref ref="STDDEBUG_FILE"/>
+        <appender-ref ref="STDWARN_FILE"/>
+    </root>
+</configuration>
